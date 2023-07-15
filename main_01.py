@@ -28,7 +28,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from youtube_transcript_api import YouTubeTranscriptApi
 from datetime import date
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = st.secrets["api_key"]
 
 st.info('Please Click clear all button and also refresh the page before making new conversations', icon="ℹ️")
 
