@@ -37,7 +37,7 @@ def instructor_embeddings():
     instructor_embed = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-base", model_kwargs={"device": "cpu"})
     return instructor_embed
 
-@st.cache_data
+#@st.cache_data
 def ori_data(file_zip):
     with tempfile.TemporaryDirectory() as temp_dir_01:
         # Extract files from zip
@@ -47,7 +47,7 @@ def ori_data(file_zip):
         st.success('Database succussfully created!', icon="✅")
     return db
 
-@st.cache_data
+#@st.cache_data
 def history_data(file_zip):
     with tempfile.TemporaryDirectory() as temp_dir_02:
         # Extract files from zip
@@ -64,7 +64,7 @@ def youtube_loader(yt_link):
     texts = text_splitter.split_documents(documents)
     return texts
 
-@st.cache_data
+#@st.cache_data
 def ori_data_02(_data_zip):
     db = FAISS.from_documents(data_zip, embed)
     st.success('Database succussfully created!', icon="✅")
